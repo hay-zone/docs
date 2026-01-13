@@ -48,7 +48,7 @@ export default defineConfig({
         nav: [
             {text: '力扣每日一题', link: '/LeetCode/'},
             {text: 'Java', link: '/Java/'},
-            {text: 'SpringBoot', link: '/SpringBoot/'},
+            {text: 'Css', link: '/Css/'},
             {text: 'SSM', link: '/SSM/'},
             {text: '笔记', link: '/Note/'},
             {text: 'MySQL', link: '/MySQL/'},
@@ -66,8 +66,8 @@ export default defineConfig({
         // 侧边栏
         sidebar: {
             "/Life/": [
-                {text: '人间烟火气', link: '/Life/人间烟火气'},
-                {text: '入冬以前', link: '/Life/入冬以前'},
+                {text: '破阵子', link: '/Life/破阵子'},
+                {text: '滴露的康乃馨', link: '/Life/滴露的康乃馨'},
                 {text: '无名的人', link: '/Life/无名的人'},
                 {text: '群山和人群', link: '/Life/群山和人群'},
                 {text: '杀死那个一条腿的人', link: '/Life/杀死那个一条腿的人'},
@@ -86,7 +86,7 @@ export default defineConfig({
                 {text: '武汉的聚会', link: '/Life/武汉的聚会'},
                 {text: '平平安安', link: '/Life/平平安安'},
                 {text: '生日快乐', link: '/Life/生日快乐'},
-                {text: '姐姐', link: '/Life/姐姐'},
+                {text: '我打江南走过', link: '/Life/我打江南走过'},
                 {text: '大学最后的暑假', link: '/Life/大学最后的暑假'},
                 {text: '登上讲台', link: '/Life/登上讲台'},
                 {text: '父亲节', link: '/Life/父亲节'},
@@ -273,11 +273,11 @@ export default defineConfig({
                 {text: 'JDBC各个类的详解', link: '/Java/JDBC各个类的详解'},
                 {text: '初识多线程', link: '/Java/初识多线程'}
             ],
-            "/JavaWeb/": [
-                {text: 'xml总结', link: '/JavaWeb/xml总结'},
-                {text: 'Web概述', link: '/JavaWeb/Web概述'},
-                {text: 'HTTP协议', link: '/JavaWeb/HTTP协议'},
-                {text: '会话技术', link: '/JavaWeb/会话技术'},
+            "/Css/": [
+                {text: '破阵子', link: '/Css/破阵子'},
+                {text: 'Web概述', link: '/Css/Web概述'},
+                {text: 'HTTP协议', link: '/Css/HTTP协议'},
+                {text: '会话技术', link: '/Css/会话技术'},
                 {
                     text: 'HTTP协议无状态中的【状态】到底指的是什么？！',
                     link: '/JavaWeb/HTTP协议无状态中的【状态】到底指的是什么？！'
