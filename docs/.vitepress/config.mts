@@ -60,7 +60,7 @@ export default defineConfig({
         socialLinks: [
             {
                 icon: 'github',
-                link: 'https://github.com/Hayzone'
+                link: 'https://github.com/hay-zone'
             }
         ],
         // 侧边栏
