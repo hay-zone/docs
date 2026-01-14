@@ -2,7 +2,7 @@
 title: TypeScript 最佳实践
 date: 2026-01-14
 categories:
-  - TypeScript  
+  - TypeScript
 ---
 
 # TypeScript 最佳实践

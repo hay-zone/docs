@@ -1,16 +1,18 @@
 ---
 title: HTTP 缓存完全指南
 date: 2026-01-14
-tags: 
- - 缓存
+tags:
+  - 缓存
 categories:
- - 追求更好
+  - 追求更好
 ---
+
 # HTTP 缓存完全指南
 
 ## 什么是 HTTP 缓存
 
 ### 核心概念
+
 ::: info
 
 **HTTP 缓存**是浏览器（或 CDN）保存已下载资源副本的机制，当再次需要这些资源时，直接从缓存读取，而不是重新从服务器下载。
@@ -261,10 +263,10 @@ Cache-Control: no-store
 
 **no-cache vs no-store 对比**：
 
-| 指令 | 是否缓存 | 是否验证 | 适用场景 |
-|------|---------|---------|---------|
-| **no-cache** | ✅ 缓存 | ✅ 每次验证 | API 接口、HTML |
-| **no-store** | ❌ 不缓存 | N/A | 敏感数据、私密信息 |
+| 指令         | 是否缓存  | 是否验证    | 适用场景           |
+| ------------ | --------- | ----------- | ------------------ |
+| **no-cache** | ✅ 缓存   | ✅ 每次验证 | API 接口、HTML     |
+| **no-store** | ❌ 不缓存 | N/A         | 敏感数据、私密信息 |
 
 #### 4. **public vs private**
 
@@ -297,7 +299,7 @@ Cache-Control: max-age=31536000, immutable
 
 ```html
 <!-- 带版本号的文件，永不改变 -->
-<link rel="stylesheet" href="/style.css?v=1.2.3">
+<link rel="stylesheet" href="/style.css?v=1.2.3" />
 <script src="/app.js?v=abc123"></script>
 
 <!-- 响应头 -->
@@ -492,17 +494,17 @@ Cache-Control: max-age=86400  // 1 天
 
 ### 完整对照表
 
-| 资源类型 | Cache-Control | 原因 | 示例 |
-|---------|--------------|------|------|
-| **HTML** | `no-cache` | 需要最新内容 | index.html |
-| **CSS/JS（带版本号）** | `max-age=31536000, immutable` | 永不改变 | app.v1.2.3.css |
-| **CSS/JS（无版本号）** | `max-age=86400` 或 `no-cache` | 可能更新 | style.css |
-| **图片（产品图）** | `max-age=2592000` | 很少改变 | product-123.jpg |
-| **图片（用户头像）** | `max-age=86400` | 可能更新 | avatar.jpg |
-| **字体** | `max-age=31536000` | 永不改变 | roboto.woff2 |
-| **API（用户数据）** | `private, no-cache` | 个人数据，需验证 | /api/user |
-| **API（公开数据）** | `public, max-age=60` | 可短期缓存 | /api/stats |
-| **API（敏感数据）** | `private, no-store` | 不能缓存 | /api/bank-account |
+| 资源类型               | Cache-Control                 | 原因             | 示例              |
+| ---------------------- | ----------------------------- | ---------------- | ----------------- |
+| **HTML**               | `no-cache`                    | 需要最新内容     | index.html        |
+| **CSS/JS（带版本号）** | `max-age=31536000, immutable` | 永不改变         | app.v1.2.3.css    |
+| **CSS/JS（无版本号）** | `max-age=86400` 或 `no-cache` | 可能更新         | style.css         |
+| **图片（产品图）**     | `max-age=2592000`             | 很少改变         | product-123.jpg   |
+| **图片（用户头像）**   | `max-age=86400`               | 可能更新         | avatar.jpg        |
+| **字体**               | `max-age=31536000`            | 永不改变         | roboto.woff2      |
+| **API（用户数据）**    | `private, no-cache`           | 个人数据，需验证 | /api/user         |
+| **API（公开数据）**    | `public, max-age=60`          | 可短期缓存       | /api/stats        |
+| **API（敏感数据）**    | `private, no-store`           | 不能缓存         | /api/bank-account |
 
 ### 详细解释
 
@@ -528,22 +530,15 @@ ETag: "v1.0.1"
 
 ```html
 <!-- 带版本号或哈希 -->
-<link rel="stylesheet" href="/css/style.css?v=1.2.3">
+<link rel="stylesheet" href="/css/style.css?v=1.2.3" />
 <script src="/js/app.abc123.js"></script>
 
 <!-- 响应头 -->
-Cache-Control: max-age=31536000, immutable
-
-原因：
-✓ 文件名包含版本号/哈希，文件内容永不改变
-✓ 可以设置最长缓存时间（1 年）
-✓ 更新时改变文件名，自动失效旧缓存
-
-部署流程：
-1. 开发者修改 CSS → 生成新文件 style.css?v=1.2.4
-2. 更新 HTML 中的引用
-3. 用户访问新 HTML → 发现新版本号 → 下载新 CSS
-4. 旧版本缓存自然过期（没有页面引用了）
+Cache-Control: max-age=31536000, immutable 原因： ✓
+文件名包含版本号/哈希，文件内容永不改变 ✓ 可以设置最长缓存时间（1 年） ✓
+更新时改变文件名，自动失效旧缓存 部署流程： 1. 开发者修改 CSS → 生成新文件
+style.css?v=1.2.4 2. 更新 HTML 中的引用 3. 用户访问新 HTML → 发现新版本号 →
+下载新 CSS 4. 旧版本缓存自然过期（没有页面引用了）
 ```
 
 #### 3. API 接口（详细）
@@ -821,14 +816,17 @@ def inject_config():
 <!-- templates/index.html -->
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <!-- 自动添加版本号 -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v={{ version }}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}?v={{ version }}"
+    />
     <script src="{{ url_for('static', filename='js/main.js') }}?v={{ version }}"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- 内容 -->
-</body>
+  </body>
 </html>
 
 <!-- 生成的 HTML: -->
@@ -1011,13 +1009,13 @@ ETag: "v1"
 
 ### 核心概念对照
 
-| 术语 | 含义 | 网络请求 | 数据传输 | 适用场景 |
-|------|------|---------|---------|---------|
-| **强缓存** | 直接使用缓存 | ❌ 无 | ❌ 无 | 静态资源 |
-| **协商缓存** | 验证后使用 | ✅ 有 | ⚠️ 可能无（304） | HTML、API |
-| **no-cache** | 必须验证 | ✅ 有 | ⚠️ 看情况 | API、HTML |
-| **no-store** | 完全不缓存 | ✅ 有 | ✅ 有 | 敏感数据 |
-| **短期缓存** | 几分钟到几小时 | ⚠️ 过期后有 | ⚠️ 过期后有 | 准实时数据 |
+| 术语         | 含义           | 网络请求    | 数据传输         | 适用场景   |
+| ------------ | -------------- | ----------- | ---------------- | ---------- |
+| **强缓存**   | 直接使用缓存   | ❌ 无       | ❌ 无            | 静态资源   |
+| **协商缓存** | 验证后使用     | ✅ 有       | ⚠️ 可能无（304） | HTML、API  |
+| **no-cache** | 必须验证       | ✅ 有       | ⚠️ 看情况        | API、HTML  |
+| **no-store** | 完全不缓存     | ✅ 有       | ✅ 有            | 敏感数据   |
+| **短期缓存** | 几分钟到几小时 | ⚠️ 过期后有 | ⚠️ 过期后有      | 准实时数据 |
 
 ### 你的项目推荐配置
 
@@ -1062,5 +1060,3 @@ Cache-Control: no-cache
 不缓存（敏感数据）:
 Cache-Control: private, no-store
 ```
-
-

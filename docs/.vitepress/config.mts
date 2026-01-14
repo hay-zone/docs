@@ -49,7 +49,6 @@ export default defineConfig({
     logo: '/img/favicon.png',
     // 导航栏
     nav: [
-      { text: '追求更好', link: '/better/' },
       { text: 'JavaScript', link: '/JavaScript/' },
       { text: 'Css', link: '/Css/' },
       { text: '工具', link: '/Tools/' },
@@ -57,7 +56,7 @@ export default defineConfig({
       { text: '小程序', link: '/MiniProgram/' },
       { text: '架构', link: '/Architecture/' },
       { text: 'AI', link: '/AI/' },
-      { text: 'hao', link: '/Life/' },
+      { text: '美文一览', link: '/Life/' },
     ],
     // 友链
     socialLinks: [
@@ -69,25 +68,12 @@ export default defineConfig({
     // 侧边栏
     sidebar: {
       '/Life/': [
-        { text: '破阵子', link: '/Life/破阵子' },
-        { text: '滴露的康乃馨', link: '/Life/滴露的康乃馨' },
-        { text: '我打江南走过', link: '/Life/我打江南走过' },
         { text: '山的那边', link: '/Life/山的那边' },
+        { text: '滴露的康乃馨', link: '/Life/滴露的康乃馨' },
+        { text: '破阵子', link: '/Life/破阵子' },
+        { text: '我打江南走过', link: '/Life/我打江南走过' },
       ],
-      '/better/': [
-        {
-          text: 'HTTP',
-          collapsed: false, // 默认展开，true 为折叠
-          items: [
-            { text: 'HTTP 缓存完全指南', link: '/better/HTTP 缓存完全指南' },
-            { text: 'HTTP2 完全指南', link: '/better/HTTP2 完全指南' },
-            {
-              text: 'HTTP 缓存与 HTTP2 核心要点',
-              link: '/better/HTTP 缓存与 HTTP2 核心要点',
-            },
-          ],
-        },
-      ],
+      '/better/': [],
       '/JavaScript/': [
         {
           text: 'ES6+',
@@ -100,7 +86,7 @@ export default defineConfig({
         },
         {
           text: 'React',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '概述', link: '/JavaScript/React/概述' },
             { text: 'Hooks', link: '/JavaScript/React/Hooks' },
@@ -109,7 +95,7 @@ export default defineConfig({
         },
         {
           text: 'Vue',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '概述', link: '/JavaScript/Vue/概述' },
             { text: '状态管理', link: '/JavaScript/Vue/状态管理' },
@@ -121,11 +107,26 @@ export default defineConfig({
         },
         {
           text: 'TypeScript',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '概述', link: '/JavaScript/TypeScript/概述' },
             { text: '进阶', link: '/JavaScript/TypeScript/进阶' },
             { text: '最佳实践', link: '/JavaScript/TypeScript/最佳实践' },
+          ],
+        },
+        {
+          text: 'HTTP',
+          collapsed: true, // 默认展开，true 为折叠
+          items: [
+            {
+              text: 'HTTP 缓存完全指南',
+              link: '/JavaScript/Http/HTTP 缓存完全指南',
+            },
+            { text: 'HTTP2 完全指南', link: '/JavaScript/Http/HTTP2 完全指南' },
+            {
+              text: 'HTTP 缓存与 HTTP2 核心要点',
+              link: '/JavaScript/Http/HTTP 缓存与 HTTP2 核心要点',
+            },
           ],
         },
       ],

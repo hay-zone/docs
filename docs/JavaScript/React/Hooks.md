@@ -1,14 +1,15 @@
 ---
 title: React Hooks
 date: 2026-01-14
-tags: 
- - Hooks
+tags:
+  - Hooks
 categories:
- - React
+  - React
 ---
+
 # React Hooks
 
-::: tip 
+::: tip
 
 React Hooks 是 React 16.8 引入的新特性,让函数组件也能使用状态和其他 React 特性。
 
@@ -21,6 +22,7 @@ Hooks 是 React 16.8 引入的新特性,让函数组件也能使用状态和其�
 ## 2. 常用 Hooks
 
 ### useState
+
 管理组件状态。
 
 ```jsx
@@ -28,6 +30,7 @@ const [count, setCount] = useState(0);
 ```
 
 ### useEffect
+
 处理副作用(数据获取、订阅、DOM 操作等)。
 
 ```jsx
@@ -40,9 +43,11 @@ useEffect(() => {
 ```
 
 ### useContext
+
 访问 Context。
 
 ### useMemo 和 useCallback
+
 - `useMemo`: 缓存计算结果
 - `useCallback`: 缓存函数引用
 

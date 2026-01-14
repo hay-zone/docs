@@ -1,9 +1,10 @@
 ---
 title: Deno 介绍
 date: 2026-01-14
-tags: 
- - Deno
+tags:
+  - Deno
 categories:
- - Node.js
+  - Node.js
 ---
+
 # Deno 介绍

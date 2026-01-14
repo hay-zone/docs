@@ -2,10 +2,10 @@
 title: Uniapp 其他
 date: 2026-01-14
 sidebar: auto
-tags: 
- - Uniapp
+tags:
+  - Uniapp
 categories:
- - MiniProgram
+  - MiniProgram
 ---
 
 # Uniapp 其他
