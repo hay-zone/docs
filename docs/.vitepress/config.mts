@@ -73,7 +73,6 @@ export default defineConfig({
         { text: '破阵子', link: '/Life/破阵子' },
         { text: '我打江南走过', link: '/Life/我打江南走过' },
       ],
-      '/better/': [],
       '/JavaScript/': [
         {
           text: 'ES6+',
@@ -148,6 +147,7 @@ export default defineConfig({
         { text: '机器学习基础', link: '/AI/机器学习基础' },
         { text: '计算机视觉', link: '/AI/计算机视觉' },
         { text: '大语言模型', link: '/AI/大语言模型' },
+        { text: 'Claude 接入 GLM4.7', link: '/AI/claude-GLM' },
       ],
       '/Nodejs/': [
         {
