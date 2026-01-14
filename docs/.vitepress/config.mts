@@ -52,12 +52,12 @@ export default defineConfig({
       { text: '追求更好', link: '/better/' },
       { text: 'JavaScript', link: '/JavaScript/' },
       { text: 'Css', link: '/Css/' },
-      { text: 'SSM', link: '/SSM/' },
-      { text: '笔记', link: '/Note/' },
-      { text: 'MySQL', link: '/MySQL/' },
-      { text: 'JavaWeb', link: '/JavaWeb/' },
-      { text: 'Linux', link: '/Linux/' },
-      { text: '生活随笔', link: '/Life/' },
+      { text: '工具', link: '/Tools/' },
+      { text: 'Nodejs', link: '/Nodejs/' },
+      { text: '小程序', link: '/MiniProgram/' },
+      { text: '架构', link: '/Architecture/' },
+      { text: 'AI', link: '/AI/' },
+      { text: 'hao', link: '/Life/' },
     ],
     // 友链
     socialLinks: [
@@ -90,6 +90,15 @@ export default defineConfig({
       ],
       '/JavaScript/': [
         {
+          text: 'ES6+',
+          collapsed: false,
+          items: [
+            { text: '基础', link: '/JavaScript/基础' },
+            { text: 'ES6+ 新特性', link: '/JavaScript/ES6+%20新特性' },
+            { text: '异步编程', link: '/JavaScript/异步编程' },
+          ],
+        },
+        {
           text: 'React',
           collapsed: false,
           items: [
@@ -104,7 +113,10 @@ export default defineConfig({
           items: [
             { text: '概述', link: '/JavaScript/Vue/概述' },
             { text: '状态管理', link: '/JavaScript/Vue/状态管理' },
-            { text: 'Composition API', link: '/JavaScript/Vue/Composition API' },
+            {
+              text: 'Composition API',
+              link: '/JavaScript/Vue/Composition API',
+            },
           ],
         },
         {
@@ -121,84 +133,80 @@ export default defineConfig({
         { text: '移动端 1px 问题', link: '/Css/移动端 1px 问题' },
         { text: 'Margin 塌陷问题', link: '/Css/Margin 塌陷问题' },
       ],
-      '/MySQL/': [{ text: '初识MySQL', link: '/MySQL/初识MySQL' }],
-      '/Linux/': [
-        { text: 'Linux 概述及环境搭建', link: '/Linux/Linux概述及环境搭建' },
+      '/Tools/': [
+        { text: 'Git', link: '/Tools/Git' },
+        { text: 'Vite', link: '/Tools/Vite' },
+        { text: 'Webpack', link: '/Tools/Webpack' },
       ],
-      '/SSM/': [
-        {
-          text: 'SSM框架',
-          collapsed: false,
-          items: [{ text: '初识SSM框架', link: '/SSM/初识SSM框架' }],
-        },
-        {
-          text: 'MyBatis',
-          collapsed: false,
-          items: [{ text: '初识MyBatis', link: '/SSM/初识MyBatis' }],
-        },
-        {
-          text: 'Spring',
-          collapsed: false,
-          items: [{ text: '初识Spring', link: '/SSM/初识Spring' }],
-        },
-        {
-          text: 'SpringMVC',
-          collapsed: false,
-          items: [{ text: '初识SpringMVC', link: '/SSM/初识SpringMVC' }],
-        },
+      '/Architecture/': [
+        { text: '设计模式', link: '/Architecture/设计模式' },
+        { text: '微服务架构', link: '/Architecture/微服务架构' },
+        { text: '系统设计', link: '/Architecture/系统设计' },
       ],
-      '/SpringBoot/': [
+      '/AI/': [
+        { text: '机器学习基础', link: '/AI/机器学习基础' },
+        { text: '计算机视觉', link: '/AI/计算机视觉' },
+        { text: '大语言模型', link: '/AI/大语言模型' },
+      ],
+      '/Nodejs/': [
         {
-          text: 'SpringBoot',
+          text: 'Nodejs',
           collapsed: false,
           items: [
-            {
-              text: '迈入前后端分离时代',
-              link: '/SpringBoot/迈入前后端分离时代',
-            },
-          ],
-        },
-      ],
-      '/Note/': [
-        {
-          text: 'Maven',
-          collapsed: false,
-          items: [{ text: 'Maven 的基本使用', link: '/Note/Maven的基本使用' }],
-        },
-        {
-          text: '计算机网络',
-          collapsed: false,
-          items: [{ text: '一文详解Socket', link: '/Note/一文详解Socket' }],
-        },
-        {
-          text: 'Elasticsearch',
-          collapsed: false,
-          items: [
-            { text: 'Elasticsearch 入门', link: '/Note/Elasticsearch入门' },
+            { text: '基础概述', link: '/Nodejs/基础概述' },
+            { text: '异步编程', link: '/Nodejs/异步编程' },
           ],
         },
         {
-          text: 'RabbitMQ',
+          text: 'Koa',
           collapsed: false,
-          items: [{ text: 'RabbitMQ 入门', link: '/Note/RabbitMQ入门' }],
+          items: [{ text: 'Koa', link: '/Nodejs/Koa' }],
         },
         {
-          text: 'Docker',
+          text: 'Express',
           collapsed: false,
-          items: [{ text: 'Docker 入门', link: '/Note/Docker入门' }],
+          items: [{ text: 'Express', link: '/Nodejs/Express' }],
         },
         {
-          text: 'Kubernetes',
+          text: 'Eggjs',
+          collapsed: false,
+          items: [{ text: 'Eggjs', link: '/Nodejs/Eggjs' }],
+        },
+        {
+          text: 'Nestjs',
+          collapsed: false,
+          items: [{ text: 'Nestjs', link: '/Nodejs/Nestjs' }],
+        },
+        {
+          text: 'Deno',
+          collapsed: false,
+          items: [{ text: 'Deno', link: '/Nodejs/deno' }],
+        },
+      ],
+      '/MiniProgram/': [
+        {
+          text: '小程序',
           collapsed: false,
           items: [
-            { text: 'Kubernetes 基础概念', link: '/Note/Kubernetes基础概念' },
+            { text: '小程序基础', link: '/MiniProgram/Origin/小程序基础' },
+            { text: '小程序组件', link: '/MiniProgram/Origin/小程序组件' },
+            { text: '网络请求', link: '/MiniProgram/Origin/网络请求' },
           ],
         },
         {
-          text: 'Others',
+          text: 'Uniapp',
           collapsed: false,
           items: [
-            { text: '分布式中的 CAP 理论', link: '/Note/分布式中的CAP理论' },
+            { text: 'Uniapp 基础', link: '/MiniProgram/Uniapp/Uniapp 基础' },
+            { text: 'Uniapp 其他', link: '/MiniProgram/Uniapp/Uniapp 其他' },
+          ],
+        },
+        {
+          text: 'Taro',
+          collapsed: false,
+          items: [
+            { text: 'Taro 基础', link: '/MiniProgram/Taro/Taro 基础' },
+            { text: 'Taro 其他', link: '/MiniProgram/Taro/Taro 其他' },
           ],
         },
       ],
