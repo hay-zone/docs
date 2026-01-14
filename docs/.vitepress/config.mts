@@ -216,14 +216,14 @@ export default defineConfig({
   vite: {
     plugins: [
       // 打赏插件
-      SponsorPlugin({
-        /**
-         * 打赏模块样式
-         */
-        type: 'simple',
-        aliPayQR: 'https://sloving.top/img/aliPayQR.jpg',
-        weChatQR: 'https://sloving.top/img/weChatQR.png',
-      }),
+    //   SponsorPlugin({
+    //     /**
+    //      * 打赏模块样式
+    //      */
+    //     type: 'simple',
+    //     aliPayQR: 'https://sloving.top/img/aliPayQR.jpg',
+    //     weChatQR: 'https://sloving.top/img/weChatQR.png',
+    //   }),
     ],
   },
 });
