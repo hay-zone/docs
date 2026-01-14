@@ -50,7 +50,7 @@ export default defineConfig({
     // 导航栏
     nav: [
       { text: '追求更好', link: '/better/' },
-      { text: 'Java', link: '/Java/' },
+      { text: 'JavaScript', link: '/JavaScript/' },
       { text: 'Css', link: '/Css/' },
       { text: 'SSM', link: '/SSM/' },
       { text: '笔记', link: '/Note/' },
@@ -77,22 +77,46 @@ export default defineConfig({
       '/better/': [
         {
           text: 'HTTP',
-          collapsed: true, // 默认展开，true 为折叠
+          collapsed: false, // 默认展开，true 为折叠
           items: [
             { text: 'HTTP 缓存完全指南', link: '/better/HTTP 缓存完全指南' },
             { text: 'HTTP2 完全指南', link: '/better/HTTP2 完全指南' },
-            { text: 'HTTP 缓存与 HTTP2 核心要点', link: '/better/HTTP 缓存与 HTTP2 核心要点' },
+            {
+              text: 'HTTP 缓存与 HTTP2 核心要点',
+              link: '/better/HTTP 缓存与 HTTP2 核心要点',
+            },
           ],
         },
+      ],
+      '/JavaScript/': [
         {
           text: 'React',
           collapsed: false,
           items: [
-            { text: '203.移除链表元素', link: '/better/203.移除链表元素' },
+            { text: '概述', link: '/JavaScript/React/概述' },
+            { text: 'Hooks', link: '/JavaScript/React/Hooks' },
+            { text: '性能优化', link: '/JavaScript/React/性能优化' },
+          ],
+        },
+        {
+          text: 'Vue',
+          collapsed: false,
+          items: [
+            { text: '概述', link: '/JavaScript/Vue/概述' },
+            { text: '状态管理', link: '/JavaScript/Vue/状态管理' },
+            { text: 'Composition API', link: '/JavaScript/Vue/Composition API' },
+          ],
+        },
+        {
+          text: 'TypeScript',
+          collapsed: false,
+          items: [
+            { text: '概述', link: '/JavaScript/TypeScript/概述' },
+            { text: '进阶', link: '/JavaScript/TypeScript/进阶' },
+            { text: '最佳实践', link: '/JavaScript/TypeScript/最佳实践' },
           ],
         },
       ],
-      '/Java/': [{ text: 'Java IO', link: '/Java/Java IO' }],
       '/Css/': [
         { text: '移动端 1px 问题', link: '/Css/移动端 1px 问题' },
         { text: 'Margin 塌陷问题', link: '/Css/Margin 塌陷问题' },
