@@ -49,6 +49,7 @@ export default defineConfig({
     logo: '/img/favicon.png',
     // 导航栏
     nav: [
+      { text: '杂货铺', link: '/CornerStore/' },
       { text: 'JavaScript', link: '/JavaScript/' },
       { text: 'Css', link: '/Css/' },
       { text: '工具', link: '/Tools/' },
@@ -68,41 +69,44 @@ export default defineConfig({
     // 侧边栏
     sidebar: {
       '/Life/': [
-        { text: '让高飞的心永不沉沦', link: '/Life/让高飞的心永不沉沦' },
-        { text: '归去来兮辞', link: '/Life/归去来兮辞' },
-        { text: '山的那边', link: '/Life/山的那边' },
-        { text: '滴露的康乃馨', link: '/Life/滴露的康乃馨' },
-        { text: '破阵子', link: '/Life/破阵子' },
-        { text: '我打江南走过', link: '/Life/我打江南走过' },
+        { text: '让高飞的心永不沉沦', link: '/Life/soaring-heart' },
+        { text: '归去来兮辞', link: '/Life/returning-home' },
+        { text: '山的那边', link: '/Life/beyond-the-mountains' },
+        { text: '滴露的康乃馨', link: '/Life/carnation' },
+        { text: '破阵子', link: '/Life/song-of-breaking-the-array' },
+        { text: '我打江南走过', link: '/Life/jiangnan' },
       ],
       '/JavaScript/': [
         {
           text: 'ES6+',
           collapsed: false,
           items: [
-            { text: '基础', link: '/JavaScript/基础' },
-            { text: 'ES6+ 新特性', link: '/JavaScript/ES6+%20新特性' },
-            { text: '异步编程', link: '/JavaScript/异步编程' },
+            { text: '基础', link: '/JavaScript/basic' },
+            { text: 'ES6+ 新特性', link: '/JavaScript/es6-new-features' },
+            { text: '异步编程', link: '/JavaScript/async-programming' },
           ],
         },
         {
           text: 'React',
           collapsed: true,
           items: [
-            { text: '概述', link: '/JavaScript/React/概述' },
+            { text: '概述', link: '/JavaScript/React/overview' },
             { text: 'Hooks', link: '/JavaScript/React/Hooks' },
-            { text: '性能优化', link: '/JavaScript/React/性能优化' },
+            {
+              text: '性能优化',
+              link: '/JavaScript/React/performance-optimization',
+            },
           ],
         },
         {
           text: 'Vue',
           collapsed: true,
           items: [
-            { text: '概述', link: '/JavaScript/Vue/概述' },
-            { text: '状态管理', link: '/JavaScript/Vue/状态管理' },
+            { text: '概述', link: '/JavaScript/Vue/overview' },
+            { text: '状态管理', link: '/JavaScript/Vue/state-management' },
             {
               text: 'Composition API',
-              link: '/JavaScript/Vue/Composition API',
+              link: '/JavaScript/Vue/composition-api',
             },
           ],
         },
@@ -110,9 +114,9 @@ export default defineConfig({
           text: 'TypeScript',
           collapsed: true,
           items: [
-            { text: '概述', link: '/JavaScript/TypeScript/概述' },
-            { text: '进阶', link: '/JavaScript/TypeScript/进阶' },
-            { text: '最佳实践', link: '/JavaScript/TypeScript/最佳实践' },
+            { text: '基础', link: '/JavaScript/TypeScript/basic' },
+            { text: '进阶', link: '/JavaScript/TypeScript/advanced' },
+            { text: '最佳实践', link: '/JavaScript/TypeScript/best-practices' },
           ],
         },
         {
@@ -121,19 +125,33 @@ export default defineConfig({
           items: [
             {
               text: 'HTTP 缓存完全指南',
-              link: '/JavaScript/Http/HTTP 缓存完全指南',
+              link: '/JavaScript/Http/http-cache-guide',
             },
-            { text: 'HTTP2 完全指南', link: '/JavaScript/Http/HTTP2 完全指南' },
+            { text: 'HTTP2 完全指南', link: '/JavaScript/Http/http2-guide' },
             {
               text: 'HTTP 缓存与 HTTP2 核心要点',
-              link: '/JavaScript/Http/HTTP 缓存与 HTTP2 核心要点',
+              link: '/JavaScript/Http/http-cache-http2-core',
             },
           ],
         },
       ],
       '/Css/': [
-        { text: '移动端 1px 问题', link: '/Css/移动端 1px 问题' },
-        { text: 'Margin 塌陷问题', link: '/Css/Margin 塌陷问题' },
+        { text: '元素快速居中', link: '/Css/element-center' },
+        {
+          text: 'padding与margin的区别',
+          link: '/Css/padding-margin-difference',
+        },
+        { text: 'vw与%的区别', link: '/Css/vw-percent-difference' },
+        {
+          text: '行内元素与块级元素的区别',
+          link: '/Css/inline-block-difference',
+        },
+        { text: '浏览器缩小字体', link: '/Css/browser-font-size' },
+        { text: '移动端 1px 问题', link: '/Css/mobile-1px-problem' },
+        {
+          text: 'Margin 塌陷问题',
+          link: '/Css/margin-collapse-problem',
+        },
       ],
       '/Tools/': [
         { text: 'Git', link: '/Tools/Git' },
@@ -141,14 +159,18 @@ export default defineConfig({
         { text: 'Webpack', link: '/Tools/Webpack' },
       ],
       '/Architecture/': [
-        { text: '设计模式', link: '/Architecture/设计模式' },
-        { text: '微服务架构', link: '/Architecture/微服务架构' },
-        { text: '系统设计', link: '/Architecture/系统设计' },
+        { text: 'PNPM 相关问题', link: '/Architecture/PNPM' },
+        { text: '设计模式', link: '/Architecture/design-patterns' },
+        {
+          text: '微服务架构',
+          link: '/Architecture/microservices-architecture',
+        },
+        { text: '系统设计', link: '/Architecture/system-design' },
       ],
       '/AI/': [
-        { text: '机器学习基础', link: '/AI/机器学习基础' },
-        { text: '计算机视觉', link: '/AI/计算机视觉' },
-        { text: '大语言模型', link: '/AI/大语言模型' },
+        { text: '机器学习基础', link: '/AI/machine-learning-basics' },
+        { text: '计算机视觉', link: '/AI/computer-vision' },
+        { text: '大语言模型', link: '/AI/large-language-model' },
         { text: 'Claude 接入 GLM4.7', link: '/AI/claude-GLM' },
       ],
       '/Nodejs/': [
@@ -156,8 +178,8 @@ export default defineConfig({
           text: 'Nodejs',
           collapsed: false,
           items: [
-            { text: '基础概述', link: '/Nodejs/基础概述' },
-            { text: '异步编程', link: '/Nodejs/异步编程' },
+            { text: '基础概述', link: '/Nodejs/basic-overview' },
+            { text: '异步编程', link: '/Nodejs/async-programming' },
           ],
         },
         {
@@ -191,41 +213,42 @@ export default defineConfig({
           text: '小程序',
           collapsed: false,
           items: [
-            { text: '小程序基础', link: '/MiniProgram/Origin/小程序基础' },
-            { text: '小程序组件', link: '/MiniProgram/Origin/小程序组件' },
-            { text: '网络请求', link: '/MiniProgram/Origin/网络请求' },
+            { text: '小程序基础', link: '/MiniProgram/Origin/basic-overview' },
+            { text: '小程序组件', link: '/MiniProgram/Origin/components' },
+            { text: '网络请求', link: '/MiniProgram/Origin/network-request' },
           ],
         },
         {
           text: 'Uniapp',
           collapsed: false,
           items: [
-            { text: 'Uniapp 基础', link: '/MiniProgram/Uniapp/Uniapp 基础' },
-            { text: 'Uniapp 其他', link: '/MiniProgram/Uniapp/Uniapp 其他' },
+            { text: 'Uniapp 基础', link: '/MiniProgram/Uniapp/basic-overview' },
+            { text: 'Uniapp 其他', link: '/MiniProgram/Uniapp/uniapp-other' },
           ],
         },
         {
           text: 'Taro',
           collapsed: false,
           items: [
-            { text: 'Taro 基础', link: '/MiniProgram/Taro/Taro 基础' },
-            { text: 'Taro 其他', link: '/MiniProgram/Taro/Taro 其他' },
+            { text: 'Taro 基础', link: '/MiniProgram/Taro/basic-overview' },
+            { text: 'Taro 其他', link: '/MiniProgram/Taro/taro-other' },
           ],
         },
       ],
+      '/CornerStore/': [],
     },
   },
   vite: {
     plugins: [
       // 打赏插件
-    //   SponsorPlugin({
-    //     /**
-    //      * 打赏模块样式
-    //      */
-    //     type: 'simple',
-    //     aliPayQR: 'https://sloving.top/img/aliPayQR.jpg',
-    //     weChatQR: 'https://sloving.top/img/weChatQR.png',
-    //   }),
+      //   SponsorPlugin({
+      //     /**
+      //      * 打赏模块样式
+      //      */
+      //     type: 'simple',
+      //     aliPayQR: 'https://sloving.top/img/aliPayQR.jpg',
+      //     weChatQR: 'https://sloving.top/img/weChatQR.png',
+      //   }),
     ],
   },
 });

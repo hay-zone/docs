@@ -1,8 +1,6 @@
 ---
 title: 移动端 1px 问题
 date: 2026-01-14
-tags:
-  - Css
 categories:
   - Css
 ---
