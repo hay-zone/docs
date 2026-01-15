@@ -1,11 +1,9 @@
-name: Deploy Pages
+name: Deploy VitePress site to Pages
 
-# 触发条件，push到main分支或者pull request到main分支
+# 触发条件，push到main分支或者手动触发
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches: [main]
 
   # 支持手动在工作流上触发
   workflow_dispatch:
@@ -43,39 +41,36 @@ jobs:
           # 保留 Git 信息
           fetch-depth: 0
 
+      # 设置 PNPM
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       # 设置使用 Node.js 版本
-      - name: Use Node.js 20
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: pnpm
 
-      # 使用 PNPM V8
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          version: 10
-          run_install: false
+      # 配置 Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-        # 安装依赖
+      # 安装依赖
       - name: Install dependencies
         run: pnpm install
 
-        # 构建项目
-      - name: Build blog project
-        run: |
-          echo ${{ github.workspace }}
-          pnpm build
+      # 构建项目
+      - name: Build with VitePress
+        run: pnpm build
 
-        # 资源拷贝
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./docs/.vitepress/dist
-          destination: ./_site
-
-        # 上传 _site 的资源，用于后续部署
+      # 上传构建产物，用于后续部署
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
 
   # 部署任务
   deploy:
